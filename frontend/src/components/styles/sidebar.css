@@ -1,0 +1,95 @@
+/* Base Sidebar Styles */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Collapsed State */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .sidebar-content > *:not(.collapse-btn) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.collapsed .collapse-btn {
+  margin: 10px auto;
+}
+
+/* Content Styles */
+.sidebar-content {
+  padding: 20px;
+  transition: opacity 0.2s ease;
+}
+
+/* Collapse Button */
+.collapse-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.collapse-btn:hover {
+  color: #3498db;
+}
+
+/* Hover Effects */
+.sidebar.collapsed:hover {
+  width: 250px;
+}
+
+.sidebar.collapsed:hover .sidebar-content > * {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Rest of your existing sidebar styles... */
+.sidebar h3 {
+  color: #ecf0f1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: block;
+  padding: 5px 0;
+}
+
+.sidebar a:hover {
+  color: #3498db;
+}
+
+.sidebar-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+  display: flex;
+  justify-content: space-between;
+}

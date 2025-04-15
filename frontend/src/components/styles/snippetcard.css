@@ -1,0 +1,101 @@
+.snippets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.snippet-card {
+  width: calc(33.33% - 14px); /* 3 cards per row with gap */
+  min-width: 300px; /* Minimum card width */
+  box-sizing: border-box;
+}
+
+.snippet-card:hover {
+  transform: translateY(-3px);
+}
+
+.snippet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.snippet-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.language-badge {
+  background: #e9ecef;
+  color: #495057;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.snippet-code {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  flex-grow: 1;
+  margin: 10px 0;
+}
+
+.snippet-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.edit-btn {
+  background: #28a745;
+  color: white;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #218838;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+@media (min-width: 1024px) {
+  .snippet-card {
+    width: calc(33.33% - 14px);
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* For 2 cards per row on medium screens */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .snippet-card {
+    width: calc(50% - 10px);
+  }
+}
+
+/* Single column on mobile */
+@media (max-width: 767px) {
+  .snippet-card {
+    width: 100%;
+  }
+}
